@@ -1,12 +1,5 @@
-// 依存性の逆転に反しているコード
-const funcB = () => {
-  return 'こんにちはB'
-}
+// 依存性の逆転
+import { funcA } from "./A"
+import { funcB } from "./B"
 
-const funcA = () => {
-  const greetMessage = funcB()
-
-  return greetMessage
-}
-
-console.log(funcA())
+console.log(funcA(funcB))
